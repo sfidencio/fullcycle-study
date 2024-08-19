@@ -82,6 +82,12 @@
 - O conteiner criado a partir de uma imagem imutável, ou seja, não pode ser alterado.
     - Existe uma camada de READ ONLY e uma camada de READ/WRITE, que é temporária e é descartada quando o container é removido.
 
+> [!NOTE]
+> - O conteiner é uma instância de uma imagem, ou seja, é uma cópia da imagem.
+
+> [!WARNING]
+> - Se o processo principal do container for finalizado, o container é finalizado, perdendo o estado ou dados que não foram persistidos em um volume de container.
+
 # Imagens
 
 - O que são imagens?
