@@ -107,7 +107,7 @@
             CMD ["node", "index.js"]
             EXPOSE 3000
             ```
-    - Imagem e um conjunto de camadas(Layers) que são empilhadas uma sobre a outra.
+    - Imagem é um conjunto de camadas(Layers) que são empilhadas uma sobre a outra.
         - Ex: `docker image inspect node:14`
         - Ex: Digamos que a imagem node:14 possui 10 camadas, e a imagem node:16 possui 10 camadas, e 5 camadas são comuns entre as duas imagens, então a imagem node:16 irá criar 5 camadas novas e irá compartilhar as 5 camadas comuns com a imagem node:14.
     - Cada camada é somente leitura e é imutável.
@@ -134,9 +134,9 @@
     EXPOSE 3000
     ```
 - Gerar imagem a partir do Dockerfile (Imutável com a camada de READ ONLY e camada de READ/WRITE)
-        - `docker build -t myapp:1.0 .`
+    - `docker build -t myapp:1.0 .`
 - Ou gerar imagem  v2.0 a partir do conteiner em execução (Imutável com a camada de READ ONLY e camada de READ/WRITE)
-        - `docker commit myapp myapp:2.0`
+    - `docker commit myapp myapp:2.0`
 
 
 
