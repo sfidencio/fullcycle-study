@@ -1,7 +1,7 @@
-![alt text](image.png)
-
 # fullcycle-study
 Advanced study on modern software development architecture
+
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 # Explorando o Docker
 
