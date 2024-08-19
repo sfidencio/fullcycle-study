@@ -64,6 +64,29 @@ Advanced study on modern software development architecture
     - Ex: temos a versão MyApp:v1 e a versão MyApp:v2, o container irá criar uma nova camada para a versão MyApp:v2, e irá compartilhar as camadas comuns entre as versões.
     - Portanto, chamamos isso de reutilização de camadas.
 
+# Imagens
+
+- O que são imagens?
+    - Imagens são templates somente leitura que contém instruções para criar um container.
+    - Portanto, posso dizer que imagem é enfemerável, ou seja, não pode ser alterada.
+    - Para alterar uma imagem, é necessário criar uma nova imagem.
+    - Imagem é composta por camadas(Layers).
+    - Imagem é composta por um arquivo chamado Dockerfile.
+    - O que é Dockerfile?
+        - Dockerfile é um arquivo que contém instruções para criar uma imagem Docker.
+        - Exemplo de Dockerfile:
+            ```Dockerfile
+            FROM node:14
+            WORKDIR /app
+            COPY . .
+            RUN npm install
+            CMD ["node", "index.js"]
+            ```
+    - Imagem e um conjunto de camadas(Layers) que são empilhadas uma sobre a outra.
+        - Ex: `docker image inspect node:14`
+        - Ex: Digamos que a imagem node:14 possui 10 camadas, e a imagem node:16 possui 10 camadas, e 5 camadas são comuns entre as duas imagens, então a imagem node:16 irá criar 5 camadas novas e irá compartilhar as 5 camadas comuns com a imagem node:14.
+    - Cada camada é somente leitura e é imutável.
+
 
 # Referências
 - https://www.docker.com
