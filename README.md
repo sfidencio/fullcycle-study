@@ -64,6 +64,9 @@ Advanced study on modern software development architecture
     - Ex: temos a versão MyApp:v1 e a versão MyApp:v2, o container irá criar uma nova camada para a versão MyApp:v2, e irá compartilhar as camadas comuns entre as versões.
     - Portanto, chamamos isso de reutilização de camadas.
 
+- Cada processo dentro de um container é um processo do sistema operacional e dentro do container eu posso ter `N`processos rodando de maneira isolada.    
+    - Ex: `ps aux`
+
 # Imagens
 
 - O que são imagens?
@@ -73,14 +76,15 @@ Advanced study on modern software development architecture
     - Imagem é composta por camadas(Layers).
     - Imagem é composta por um arquivo chamado Dockerfile.
     - O que é Dockerfile?
-        - Dockerfile é um arquivo que contém instruções para criar uma imagem Docker.
-        - Exemplo de Dockerfile:
+        - Dockerfile é um arquivo declarativo que contém instruções para criar uma imagem Docker.
+        - Exemplo de Dockerfile(Imagem customizada a partir da imagem node:14):
             ```Dockerfile
             FROM node:14
             WORKDIR /app
             COPY . .
             RUN npm install
             CMD ["node", "index.js"]
+            EXPOSE 3000
             ```
     - Imagem e um conjunto de camadas(Layers) que são empilhadas uma sobre a outra.
         - Ex: `docker image inspect node:14`
