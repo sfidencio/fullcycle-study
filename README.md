@@ -49,7 +49,6 @@ Advanced study on modern software development architecture
     - OverlayFS
         - OverlayFS é um sistema de arquivos que permite a criação de camadas de arquivos, facilitando a criação de imagens Docker.
             - Ex: Camadas(Layer) de imagens Docker.
-ßß
 
 # Referências
 - https://www.docker.com
