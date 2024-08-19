@@ -112,6 +112,33 @@
         - Ex: Digamos que a imagem node:14 possui 10 camadas, e a imagem node:16 possui 10 camadas, e 5 camadas são comuns entre as duas imagens, então a imagem node:16 irá criar 5 camadas novas e irá compartilhar as 5 camadas comuns com a imagem node:14.
     - Cada camada é somente leitura e é imutável.
 
+    - As imagens são armazenadas em um registro de imagens(Registry) local ou remoto.
+        - Ex: Docker Hub, Amazon ECR, Google Container Registry, Azure Container Registry.
+    - Baixar imagem do Docker Hub
+        - `docker pull node:14`
+    - Listar imagens
+        - `docker image ls`
+    - Remover imagem
+        - `docker image rm node:14`
+
+# Resumo
+
+- Dockerfile 
+    - Arquivo declarativo que contém instruções para criar uma imagem Docker.
+    ```Dockerfile
+    FROM node:14
+    WORKDIR /app
+    COPY . .
+    RUN npm install
+    CMD ["node", "index.js"]
+    EXPOSE 3000
+    ```
+- Gerar imagem a partir do Dockerfile (Imutável com a camada de READ ONLY e camada de READ/WRITE)
+        - `docker build -t myapp:1.0 .`
+- Ou gerar imagem  v2.0 a partir do conteiner em execução (Imutável com a camada de READ ONLY e camada de READ/WRITE)
+        - `docker commit myapp myapp:2.0`
+
+
 
 # Referências
 - https://www.docker.com
