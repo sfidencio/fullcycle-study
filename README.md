@@ -50,6 +50,21 @@ Advanced study on modern software development architecture
         - OverlayFS é um sistema de arquivos que permite a criação de camadas de arquivos, facilitando a criação de imagens Docker.
             - Ex: Camadas(Layer) de imagens Docker.
 
+- Diferença entre Containers e VMs
+    - Containers
+        - Compartilham o kernel do sistema operacional.
+        - São mais leves e rápidos.
+        - São mais fáceis de escalar.
+    - VMs
+        - Possuem um sistema operacional completo.
+        - São mais pesadas e lentas.
+        - São mais difíceis de escalar.
+
+- Como conteiner trabalha com `layers`, ele é mais rápido e mais leve que uma VM.
+    - Ex: temos a versão MyApp:v1 e a versão MyApp:v2, o container irá criar uma nova camada para a versão MyApp:v2, e irá compartilhar as camadas comuns entre as versões.
+    - Portanto, chamamos isso de reutilização de camadas.
+
+
 # Referências
 - https://www.docker.com
 - https://docs.docker.com
