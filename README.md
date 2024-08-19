@@ -116,10 +116,17 @@
         - Ex: Docker Hub, Amazon ECR, Google Container Registry, Azure Container Registry.
     - Baixar imagem do Docker Hub
         - `docker pull node:14`
+            - Toda vez que baixamos uma imagem, ela é armazenada em um registro local.
+            - O nome da image pode ser informado na linha `FROM` do Dockerfile também.
     - Listar imagens
         - `docker image ls`
     - Remover imagem
         - `docker image rm node:14`
+    - Enviando uma image customizada para o Docker Hub
+        - `docker tag myapp:1.0 myuser/myapp:1.0`
+            - `myapp:1.0` é a imagem local que foi criada a partir do Dockerfile
+        - `docker push myuser/myapp:1.0`
+            - Enviando a imagem para o Docker Hub
 
 # Resumo
 
@@ -138,6 +145,13 @@
 - Ou gerar imagem  v2.0 a partir do conteiner em execução (Imutável com a camada de READ ONLY e camada de READ/WRITE)
     - `docker commit myapp myapp:2.0`
 
+- Funcionamento do docker
+    - Docker Client, através de comandos(run,pull,push), interage com o Docker Server(Host,Cache,Daemon) que se comunica com o Docker Registry(Docker Hub, Amazon ECR, Google Container Registry, Azure Container Registry).- 
+
+- Cache
+    - Docker Server possui um cache de imagens, para evitar o download de imagens que já foram baixadas.
+
+- Docker host gerencia containers, imagens, volumes, redes, plugins, etc.
 
 
 # Referências
