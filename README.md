@@ -52,6 +52,6 @@ Advanced study on modern software development architecture
 ßß
 
 # Referências
-> https://www.docker.com/
-> https://docs.docker.com/
-> https://hub.docker.com/
+- https://www.docker.com
+- https://docs.docker.com
+- https://hub.docker.com
