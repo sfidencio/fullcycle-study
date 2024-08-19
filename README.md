@@ -67,6 +67,17 @@ Advanced study on modern software development architecture
 - Cada processo dentro de um container é um processo do sistema operacional `host` e dentro do container eu posso ter `N`processos rodando de maneira isolada.    
     - Ex: `ps aux`
 
+- Estado representacional de execução de um container
+    - Sistema Operacional Host 
+        - Docker Engine
+            - Container -> Processo do sistema operacional host, este não é um processo do container e sim do sistema operacional host
+                - Processo 1 -> Aqui é um processo do container ou sub-processo do processo do container.
+                - Processo 2 -> idem
+                - Processo 3 -> idem
+                - Processo N -> idem
+            
+
+
 # Imagens
 
 - O que são imagens?
