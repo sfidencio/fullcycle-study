@@ -64,7 +64,7 @@ Advanced study on modern software development architecture
     - Ex: temos a versão MyApp:v1 e a versão MyApp:v2, o container irá criar uma nova camada para a versão MyApp:v2, e irá compartilhar as camadas comuns entre as versões.
     - Portanto, chamamos isso de reutilização de camadas.
 
-- Cada processo dentro de um container é um processo do sistema operacional e dentro do container eu posso ter `N`processos rodando de maneira isolada.    
+- Cada processo dentro de um container é um processo do sistema operacional `host` e dentro do container eu posso ter `N`processos rodando de maneira isolada.    
     - Ex: `ps aux`
 
 # Imagens
