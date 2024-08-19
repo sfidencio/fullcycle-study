@@ -1,6 +1,8 @@
 # fullcycle-study
 Advanced study on modern software development architecture
 
+![alt text](image.png)
+
 # Explorando o Docker
 
 - O que são containers?
@@ -27,10 +29,23 @@ Advanced study on modern software development architecture
         - MNT: Isola sistemas de arquivos
         - UTS: Isola identificadores de host e domínio
         - USER: Isola usuários
-- Cgroups
-    - Cgroup: Isola recursos de hardware
+- Cgroups (Criado pelo Google)
+    - Cgroup: Isola recursos de hardware dos containers
         - CPU
+            - `cat /proc/cpuinfo`
         - Memória
+            - `cat /proc/meminfo`
         - Disco
         - Rede
 - Resumindo, containers são processos isolados que compartilham o kernel do sistema operacional.
+
+- 3 Pilares de Containers
+    - Namespace
+        - Isola processos, redes, sistemas de arquivos, entre outros recursos do sistema operacional.
+            - Ex: PID, NET, IPC, MNT, UTS, USER.
+    - Cgroups
+        - Isola recursos de hardware dos containers.
+            - Ex: CPU, Memória, Disco, Rede.
+    - OverlayFS
+        - OverlayFS é um sistema de arquivos que permite a criação de camadas de arquivos, facilitando a criação de imagens Docker.
+            - Ex: Camadas(Layer) de imagens Docker.
