@@ -146,13 +146,36 @@
     - `docker commit myapp myapp:2.0`
 
 - Funcionamento do docker
-    - Docker Client, através de comandos(run,pull,push), interage com o Docker Server(Host,Cache,Daemon) que se comunica com o Docker Registry(Docker Hub, Amazon ECR, Google Container Registry, Azure Container Registry).- 
+    - Docker Client, através de comandos(run,pull,push), interage com o Docker Host(Cache,Daemon) que se comunica com o Docker Registry(Docker Hub, Amazon ECR, Google Container Registry, Azure Container Registry).- 
 
 - Cache
-    - Docker Server possui um cache de imagens, para evitar o download de imagens que já foram baixadas.
+    - Docker Host possui um cache de imagens, para evitar o download de imagens que já foram baixadas.
 
 - Docker host gerencia containers, imagens, volumes, redes, plugins, etc.
 
+- Para que serve os volumes?
+    - Volumes são mecanismos de persistência de dados em containers, permitindo que os dados sejam compartilhados entre containers e entre o host e o container.
+    - Ex: `docker run -v /app/data:/data myapp:1.0`
+        - `/app/data` é o diretório no host
+        - `/data` é o diretório no container
+    
+
+- Conteiners são efêmeros(imutável), ou seja, não persistem dados.
+    - Para persistir dados em um container, é necessário utilizar volumes.
+
+- Network
+    - Docker Host possui uma rede interna que permite a comunicação entre containers.
+    - Ex: `docker run -p 3000:3000 myapp:1.0`
+        - `-p 3000:3000` mapeia a porta 3000 do host para a porta 3000 do container.
+
+> [!WARNING]
+> - Docker foi feito no sistema operacional Linux, e por isso, o Docker Desktop no Windows e no MacOS utiliza uma máquina virtual para rodar o Docker Engine. Portanto, o Docker Desktop no Windows e no MacOS é mais lento que no Linux. Enfim, não roda nativamente.
+
+> [!NOTE]
+> - Para Windows, é recomendado utilizar o WSL2(Windows Subsystem for Linux) para rodar o Docker Engine.
+
+- Tutorial Docker via WSL2
+    - https://github.com/sfidencio/my-study-projects/tree/master/dicas-macetes-ferramentas
 
 # Referências
 - https://www.docker.com
