@@ -177,6 +177,9 @@
 - Tutorial Docker via WSL2
     - https://github.com/sfidencio/my-study-projects/tree/master/dicas-macetes-ferramentas
 
+- Instalação Docker
+    - https://docs.docker.com/get-docker/
+
 # Referências
 - https://www.docker.com
 - https://docs.docker.com
